@@ -1,11 +1,10 @@
 /* Code for WATS 3020 FizzBuzz Assignment */
 
-let isInteger,
-    maxNumber,
-    fbResults,
-    fbText;
+let isInteger = false;
+let maxNumber;
+let fbResults = [];
+let fbText = '';
 
-isInteger = false;
 
 while (isInteger === false){
   maxNumber = parseInt(prompt('Please enter an integer greater than 0.'));
@@ -14,21 +13,17 @@ while (isInteger === false){
   };
 }
 
-fbResults = [];
-
 for (i=1; i <= maxNumber; i++){
-  if (i % 3 === 0 && i % 5 === 0){
+  if (i % 15 === 0){
     fbResults.push('FizzBuzz');
-  } else if (i % 5 === 0){
-    fbResults.push('Buzz');
   } else if (i % 3 === 0){
     fbResults.push('Fizz');
+  } else if (i % 5 === 0){
+    fbResults.push('Buzz');
   } else{
     fbResults.push(i);
   };
 }
-
-fbText = '';
 
 for (let value of fbResults){
   fbText = fbText + value + ' </br>';
