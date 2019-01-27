@@ -1,17 +1,29 @@
 /* Code for WATS 3020 FizzBuzz Assignment */
 
 let isInteger = false;
-let maxNumber;
+let maxNumber,
+  numberInput,
+  userInput;
 let fbResults = [];
 let fbText = '';
 
-
-while (isInteger === false){
-  maxNumber = parseInt(prompt('Please enter an integer greater than 0.'));
-  if (Number.isSafeInteger(maxNumber)){
-    isInteger = true;
+function getInteger(){
+  while (isInteger === false){
+    userInput = prompt('Please enter an integer (i.e. a whole number) greater than 0.');
+    numberInput = parseInt(userInput);
+    let notDigit = /\D/;
+    if (notDigit.test(userInput)){
+      alert('Error: Your input contains characters that are not digits.');
+    } else if (numberInput === 0){
+      alert('Error: The number you entered is not greater than 0.');
+    } else{
+      isInteger = true;
+    };
   };
-}
+} 
+
+getInteger();
+maxNumber = numberInput;
 
 for (i=1; i <= maxNumber; i++){
   if (i % 15 === 0){
