@@ -33,7 +33,7 @@ function FizzBuzz(){
     } else{
       fbResults.push(i);
     };
-  }
+  };
 }
 
 getInteger();
